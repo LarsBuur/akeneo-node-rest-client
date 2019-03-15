@@ -76,9 +76,7 @@ export class AkeneoClient {
    * @param {object} params
    */
   async get(endpoint, params) {
-    if (
-      !this.endpoints.includes(endpoint.substring(0, endpoint.indexOf('/')))
-    ) {
+    if (!this.endpoints.includes(endpoint)) {
       throw new Error(`Unknown endpoint "${endpoint}"`)
     }
 
